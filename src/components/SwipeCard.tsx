@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Heart, X } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface SwipeCardProps {
   profile: {
@@ -72,12 +73,25 @@ export const SwipeCard = ({ profile, onSwipe, style }: SwipeCardProps) => {
         </motion.div>
 
         {/* Profile info */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-foreground">
-          <h2 className="text-3xl font-bold mb-2">
-            {profile.name}
-          </h2>
-          <p className="text-muted-foreground mb-2">Mes {profile.age} - {profile.distance} días juntos</p>
-          <p className="text-sm text-foreground/80 leading-relaxed">{profile.bio}</p>
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent p-6 max-h-[50%]">
+          <ScrollArea className="h-full pr-4">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                {profile.name}
+              </h2>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Heart className="h-4 w-4 fill-primary text-primary" />
+                <p className="text-sm font-medium">
+                  Mes {profile.age} - {profile.distance} días juntos
+                </p>
+              </div>
+              <div className="pt-2 border-t border-primary/20">
+                <p className="text-base text-foreground/90 leading-relaxed font-light">
+                  {profile.bio}
+                </p>
+              </div>
+            </div>
+          </ScrollArea>
         </div>
       </div>
     </motion.div>
