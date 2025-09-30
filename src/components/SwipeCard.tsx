@@ -74,10 +74,10 @@ export const SwipeCard = ({ profile, onSwipe, style }: SwipeCardProps) => {
         {/* Profile info */}
         <div className="absolute bottom-0 left-0 right-0 p-6 text-foreground">
           <h2 className="text-3xl font-bold mb-2">
-            {profile.name}, {profile.age}
+            {profile.name}
           </h2>
-          <p className="text-muted-foreground mb-2">{profile.distance} km away</p>
-          <p className="text-sm text-foreground/80">{profile.bio}</p>
+          <p className="text-muted-foreground mb-2">Mes {profile.age} - {profile.distance} días juntos</p>
+          <p className="text-sm text-foreground/80 leading-relaxed">{profile.bio}</p>
         </div>
       </div>
     </motion.div>

@@ -16,12 +16,12 @@ const Index = () => {
     const swipedProfile = currentProfiles[currentProfiles.length - 1];
     
     if (direction === "right") {
-      toast.success(`¡Te gustó ${swipedProfile.name}! 💕`, {
-        description: "Es un match si a ella también le gustas",
+      toast.success(`¡Guardaste "${swipedProfile.name}"! 💕`, {
+        description: "Este recuerdo quedará en tu corazón para siempre",
       });
     } else {
-      toast.info(`Pasaste de ${swipedProfile.name}`, {
-        description: "Hay más personas esperando",
+      toast.info(`Siguiente carta...`, {
+        description: "Cada mensaje es especial a su manera",
       });
     }
 
@@ -44,7 +44,7 @@ const Index = () => {
         <div className="flex items-center gap-2">
           <Flame className="h-8 w-8 text-primary" />
           <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Swipe
+            Cartas de Amor
           </h1>
         </div>
       </header>
@@ -59,9 +59,9 @@ const Index = () => {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="text-center p-8 bg-card rounded-3xl shadow-card">
-                  <h2 className="text-2xl font-bold mb-4">¡No hay más perfiles!</h2>
+                  <h2 className="text-2xl font-bold mb-4">¡Has leído todas las cartas! 💝</h2>
                   <p className="text-muted-foreground mb-6">
-                    Vuelve más tarde para ver nuevos perfiles
+                    Cada mensaje fue escrito con amor especialmente para ti
                   </p>
                   {removedProfiles.length > 0 && (
                     <button
@@ -71,7 +71,7 @@ const Index = () => {
                       }}
                       className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:opacity-90 transition-opacity"
                     >
-                      Reiniciar
+                      Leer de nuevo
                     </button>
                   )}
                 </div>
